@@ -5,10 +5,10 @@
 
 int main()
 {
-    int x =  100 ;
+    int x =  80 ;
     std::cout << "Hello World!"<< x ;
     printf("halo pak sigma aku gregorius aprrianto") ;
-    printf("nilai" + x) ;
+    printf("absen" + x) ;
 
 }
 
