@@ -7,7 +7,7 @@ int main()
 {
     int x =  100 ;
     std::cout << "Hello World!"<< x ;
-    printf("pak sigma") ;
+    printf("halo pak sigma aku gregorius aprrianto") ;
     printf("nilai" + x) ;
 
 }
