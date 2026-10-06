@@ -5,8 +5,10 @@
 
 int main()
 {
-    
-    std::cout << "Hello World!\n";
+    int x =  100 ;
+    std::cout << "Hello World!"<< x ;
+    printf("pak sigma") ;
+    printf("nilai" + x) ;
 
 }
 
