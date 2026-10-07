@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Tugas Mini Project UTS/Tugas Mini Project UTS.vcxproj" />
+  <Project Path="Tugas Mini Project UTS/Tugas Mini Project UTS.vcxproj" Id="e7260612-b25b-411d-840b-a2f1c95a0bc4" />
 </Solution>

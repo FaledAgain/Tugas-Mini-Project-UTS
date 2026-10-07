@@ -9,6 +9,7 @@ int main()
     std::cout << "Hello World!"<< x ;
     printf("halo pak sigma aku gregorius aprrianto") ;
     printf("absen" + x) ;
+	printf("testing 2");
 
 }
 
