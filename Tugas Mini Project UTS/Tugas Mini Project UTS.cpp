@@ -11,4 +11,7 @@ int main()
     printf("absen" + x) ;
 	printf("testing 2");
 
+
+    awdawhjgshaw
+
 }
