@@ -5,9 +5,7 @@
 
 int main()
 {
-    int x =  80 ;
-    std::cout << "Hello World!"<< x ;
+
+    std::cout << "Hello World!";
    
 }
-
-gdtddt
