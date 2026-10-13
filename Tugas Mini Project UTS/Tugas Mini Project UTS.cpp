@@ -5,7 +5,7 @@
 int main(void)
 {
     char nama[50], kategori[20];
-    int id, jenis, jumlah;
+    int useremail, jenis, jumlah;
     int hargaSatuan, subtotal, persenDiskon, diskon, totalBayar;
     int uangBayar, kembalian;
 
@@ -13,7 +13,7 @@ int main(void)
     printf("Nama pelanggan : ");
     scanf(" %49[^\n]", nama);
     printf("ID pelanggan   : ");
-    scanf("%d", &id);
+    scanf("%d", &useremail);
 
     do {
         printf("Jumlah tiket (1-5): ");
