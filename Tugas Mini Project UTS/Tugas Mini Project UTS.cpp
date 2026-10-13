@@ -20,7 +20,7 @@ int main(void)
         scanf("%d", &jumlah);
         if (jumlah < 1 || jumlah > 5)
 			printf("Jumlah tidak diperbolehkan!\n");
-		if (jumlah > 1)
+		if (jumlah > 1);
 
     } while (jumlah < 1 || jumlah > 5);
 
@@ -48,7 +48,7 @@ int main(void)
     // Mahasiswa 3
     printf("\n===== DETAIL TIKET =====\n");
     printf("Nama      : %s\n", nama);
-    printf("ID        : %d\n", id);
+    printf("ID        : %d\n", useremail);
     printf("Kategori  : %s\n", kategori);
     printf("Jumlah    : %d\n", jumlah);
     printf("Harga     : Rp %d\n", hargaSatuan);
