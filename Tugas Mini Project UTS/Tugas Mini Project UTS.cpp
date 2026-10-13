@@ -9,7 +9,7 @@ int main(void)
     int hargaSatuan, subtotal, persenDiskon, diskon, totalBayar;
     int uangBayar, kembalian;
 
-    /* ===== MAHASISWA 1: input dan validasi ===== */
+    // Mahasiswa 1
     printf("Nama pelanggan : ");
     scanf(" %49[^\n]", nama);
     printf("ID pelanggan   : ");
@@ -32,7 +32,7 @@ int main(void)
     } while (jenis < 1 || jenis > 3);
 
 
-    /* ===== MAHASISWA 2: proses dan perhitungan ===== */
+    // Mahasiswa 2
     if (jenis == 1)      { hargaSatuan = 50000;  strcpy(kategori, "Reguler"); }
     else if (jenis == 2) { hargaSatuan = 100000; strcpy(kategori, "VIP"); }
 
@@ -45,7 +45,7 @@ int main(void)
     diskon    = subtotal * persenDiskon / 100;
     totalBayar = subtotal - diskon;
 
-    /* ===== MAHASISWA 3: tiket, pembayaran, kembalian ===== */
+    // Mahasiswa 3
     printf("\n===== DETAIL TIKET =====\n");
     printf("Nama      : %s\n", nama);
     printf("ID        : %d\n", id);
