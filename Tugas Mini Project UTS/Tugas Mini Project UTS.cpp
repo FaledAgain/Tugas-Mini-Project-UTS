@@ -1,11 +1,14 @@
 #include <stdio.h>
+#include <iostream>
 #include <string.h>
+
+using namespace std;
 
 int main(void)
 {
     char nama[50], kategori[20], email[50];
-    int jenis, jumlah;
-    int hargaSatuan, subtotal, persenDiskon, diskon, totalBayar;
+    int jenis, jumlah = 0;
+    int hargaSatuan =  0, subtotal, persenDiskon, diskon, totalBayar;
     int uangBayar, kembalian;
 
     char pilihanUlang;     // Variabel untuk menampung jawaban user (y/t)
@@ -21,9 +24,9 @@ int main(void)
 
         // Input Data Pelanggan //
         printf("Nama pelanggan : ");
-        scanf(" %[^\n]", nama);
+        scanf_s(" %49[^\n]", nama, sizeof nama);
         printf("Email          : ");
-        scanf(" %[^\n]", email);
+        scanf_s(" %49[^\n]", email, sizeof email);
 
         // Input Pembelian Tiket //
         do {
@@ -31,39 +34,90 @@ int main(void)
             printf("1. Tiket Reguler \n");
             printf("2. Tiket VIP \n");
             printf("Pilih Jenis Tiket (1 / 2): ");
-            scanf("%d", &jenis);
+            scanf_s("%d", &jenis);
 
-            if (jenis < 1 || jenis > 2) {
+            if (jenis == 1) 
+            {
+                hargaSatuan = 5000;
+                strcpy_s(kategori, sizeof(kategori), "Reguler");
+                break;
+            }
+            else if (jenis == 2) 
+            {
+                hargaSatuan = 10000;
+                strcpy_s(kategori, sizeof(kategori), "VIP");
+                break;
+            }
+
+            else if (jenis < 1 || jenis > 2)
+            {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
                 printf("Pilihan tidak valid!\n");
             }
-        } while (jenis < 1 || jenis > 2);
+
+            else if (!(std::cin >> jenis))
+            {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+				printf("Pilihan tidak valid!\n");
+			}
+
+        } while (jenis < 1 || jenis > 2 || !(std::cin >> jenis));
 
         do {
             printf("Jumlah tiket (1-5): ");
-            scanf("%d", &jumlah);
-            if (jumlah < 1 || jumlah > 5) {
-                printf("Jumlah tidak valid!\n");
+            scanf_s("%d", &jumlah);
+
+            if (jumlah >= 5)
+            {
+                persenDiskon = 15;
+                break;
             }
-        } while (jumlah < 1 || jumlah > 5);
+
+            else if (jumlah >= 3)
+            {
+                persenDiskon = 10;
+                break;
+            }
+
+            else if (jumlah >= 2)
+            {
+                persenDiskon = 5;
+                break;
+            }
+
+			else if (jumlah == 1)
+            {
+                persenDiskon = 0;
+                break;
+            }
+
+            else if (jumlah < 1 || jumlah > 5)
+            {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+                printf("Jumlah tiket tidak valid!\n");
+            }
+
+            else if (!(std::cin >> jumlah))
+            {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+                printf("Jumlah tiket harus berupa angka!\n");
+            }
+
+
+        } while (jumlah < 1 || jumlah > 5 || !(std::cin >> jumlah));
 
 
         // Mahasiswa Ke-2
 
-        // Fungsi Logika Harga Tiket & Mendeklarasi Nama Kategori Tiket //
-        if (jenis == 1) {
-            hargaSatuan = 5000;
-            strcpy(kategori, "Reguler");
-        }
-        else if (jenis == 2) {
-            hargaSatuan = 10000;
-            strcpy(kategori, "VIP");
-        }
+        // Fungsi Logika Harga Tiket & Mendeklarasi Nama Kategori Tiket 
 
-        // Sistem Diskon //
-        if (jumlah >= 5)      persenDiskon = 15;
-        else if (jumlah >= 3) persenDiskon = 10;
-        else if (jumlah >= 2) persenDiskon = 5;
-        else                  persenDiskon = 0;
+
+        // Sistem Diskon
+
 
         // Rumus Diskon //
         subtotal   = hargaSatuan * jumlah;
@@ -86,7 +140,7 @@ int main(void)
 
         do {
             printf("Uang bayar: Rp ");
-            scanf("%d", &uangBayar);
+            scanf_s("%d", &uangBayar);
             if (uangBayar < totalBayar) {
                 printf("Uang kurang, ulangi!\n");
             }
@@ -100,7 +154,7 @@ int main(void)
         do {
 
         printf("\nIngin membeli tiket sebagai pembeli baru? (y/t): ");
-        scanf(" %c", &pilihanUlang);
+        scanf_s(" %c", &pilihanUlang);
 
         // Jika user menjawab 'y' atau 'Y', ID naik 1 tingkat, lalu program mengulang dari atas
         if (pilihanUlang == 'y' || pilihanUlang == 'Y') {
@@ -117,7 +171,7 @@ int main(void)
 			printf("\nInput tidak Valid! Mohon Diulang\n");
 		}
 
-	} while (1);
+	    } while (1);
 
     } while (pilihanUlang == 'y' || pilihanUlang == 'Y');
 
