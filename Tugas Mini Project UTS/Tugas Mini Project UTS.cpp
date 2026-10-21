@@ -167,7 +167,7 @@ int main(void)
             printf("Kembalian: Rp %d\n", kembalian);
         }
 
-        // Pertanyaan untuk pembeli berikutnya
+        // Pertanyaan untuk pembelian berikutnya
         do {
 
             printf("\nIngin membeli tiket sebagai pembeli baru? (y/t): ");
