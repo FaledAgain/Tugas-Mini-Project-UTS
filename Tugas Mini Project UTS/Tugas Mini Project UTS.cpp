@@ -22,19 +22,11 @@ int main(void)
 
         // Mahasiswa Ke-1
 
-        // Input Nama Pelanggan //
+        // Input Data Pelanggan //
         printf("Nama pelanggan : ");
-        scanf(" %4[^\n]", nama);
-
-        // Input Email dengan Struktur Kendali //
-       do {
-    printf("Email          : ");
-    scanf(" %49[^\n]", email);
-
-    if (strchr(email, '@') == NULL) {
-        printf("Email Invalid, Mohon Masukkan Ulang!\n");
-    }
-} while (strchr(email, '@') == NULL);
+        scanf_s(" %49[^\n]", nama, sizeof nama);
+        printf("Email          : ");
+        scanf_s(" %49[^\n]", email, sizeof email);
 
         // Input Pembelian Tiket //
         do {
