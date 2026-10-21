@@ -22,11 +22,19 @@ int main(void)
 
         // Mahasiswa Ke-1
 
-        // Input Data Pelanggan //
+        // Input Nama Pelanggan //
         printf("Nama pelanggan : ");
-        scanf_s(" %49[^\n]", nama, sizeof nama);
-        printf("Email          : ");
-        scanf_s(" %49[^\n]", email, sizeof email);
+        scanf(" %4[^\n]", nama);
+
+        // Input Email dengan Struktur Kendali //
+       do {
+    printf("Email          : ");
+    scanf(" %49[^\n]", email);
+
+    if (strchr(email, '@') == NULL) {
+        printf("Email Invalid, Mohon Masukkan Ulang!\n");
+    }
+} while (strchr(email, '@') == NULL);
 
         // Input Pembelian Tiket //
         do {
@@ -93,7 +101,7 @@ int main(void)
 
         // Mahasiswa Ke-2
 
-        // Fungsi Logika Harga Tiket & Mendeklarasi Nama Kategori Tiket 
+        // Fungsi Logika Harga Tiket & Mendeklarasi Nama Kategori Tiket
 
 
         // Sistem Diskon
@@ -150,7 +158,7 @@ int main(void)
             if (uangBayar >= totalBayar)
             {
                 break;
-            }   
+            }
 
             else if (uangBayar < totalBayar || !(std::cin >> uangBayar))
             {
