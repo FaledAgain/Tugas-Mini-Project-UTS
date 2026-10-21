@@ -25,8 +25,14 @@ int main(void)
         // Input Data Pelanggan //
         printf("Nama pelanggan : ");
         scanf_s(" %49[^\n]", nama, sizeof nama);
-        printf("Email          : ");
-        scanf_s(" %49[^\n]", email, sizeof email);
+        do {
+            printf("Email          : ");
+            scanf_s(" %49[^\n]", email, sizeof email);
+
+            if (strchr(email, '@') == NULL) {
+                printf("Email Invalid, Mohon Masukkan Ulang!\n");
+            }
+        } while (strchr(email, '@') == NULL);
 
         // Input Pembelian Tiket //
         do {
