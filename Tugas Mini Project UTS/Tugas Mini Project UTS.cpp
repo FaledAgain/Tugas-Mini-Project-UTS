@@ -170,7 +170,7 @@ int main(void)
         // Pertanyaan untuk pembelian berikutnya
         do {
 
-            printf("\nIngin membeli tiket sebagai pembeli baru? (y/t): ");
+            printf("\nIngin membeli tiket sebagai pembelian baru? (y/t): ");
             scanf_s(" %c", &pilihanUlang);
 
             // Jika user menjawab 'y' atau 'Y', ID naik 1 tingkat, lalu program mengulang dari atas
