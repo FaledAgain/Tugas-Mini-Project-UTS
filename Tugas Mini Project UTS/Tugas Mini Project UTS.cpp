@@ -99,7 +99,7 @@ int main(void)
 
         // Mahasiswa Ke-2
 
-        // Fungsi Logika Harga Tiket & Mendeklarasi Nama Kategori Tiket 
+        // Fungsi Logika Harga Tiket & Mendeklarasi Nama Kategori Tiket
 
 
         // Sistem Diskon
@@ -156,7 +156,7 @@ int main(void)
             if (uangBayar >= totalBayar)
             {
                 break;
-            }   
+            }
 
             else if (uangBayar < totalBayar || !(std::cin >> uangBayar))
             {
@@ -173,10 +173,10 @@ int main(void)
             printf("Kembalian: Rp %d\n", kembalian);
         }
 
-        // Pertanyaan untuk pembeli berikutnya
+        // Pertanyaan untuk pembelian berikutnya
         do {
 
-            printf("\nIngin membeli tiket sebagai pembeli baru? (y/t): ");
+            printf("\nIngin membeli tiket sebagai pembelian baru? (y/t): ");
             scanf_s(" %c", &pilihanUlang);
 
             // Jika user menjawab 'y' atau 'Y', ID naik 1 tingkat, lalu program mengulang dari atas
